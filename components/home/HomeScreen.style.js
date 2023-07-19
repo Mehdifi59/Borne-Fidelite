@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
  
-import {COLORS, SIZES} from "../../constants"
+import {COLORS, SIZES, FONTS} from "../../constants"
 
 const styles = StyleSheet.create({
     container :{
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     btnText : {
         color: COLORS.white,
         fontSize:SIZES.xxLarge,
-        fontWeight:"600"
+        fontFamily:FONTS.Bold,
     },
 }
 )
