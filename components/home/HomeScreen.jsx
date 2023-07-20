@@ -1,9 +1,14 @@
 import {View, Text, Image, TouchableOpacity } from "react-native";
+import { useRouter } from "expo-router";
 import styles from "./HomeScreen.style";
 import {images} from "../../constants"
 import {Svg, Path} from 'react-native-svg';
 
 const HomeScreen = () => {
+    const router = useRouter()
+    const handleClick = () => {
+        router.push("/number")
+    }
     return(
         <View style={styles.container}>
             <View style={{height:"50%"}}>
@@ -15,7 +20,7 @@ const HomeScreen = () => {
             </View>
 
             <View style={styles.btnContainer}>
-                <TouchableOpacity style={styles.btn}>
+                <TouchableOpacity style={styles.btn} onPress={handleClick}>
                     <Text style={styles.btnText}>Vazy</Text>
                 </TouchableOpacity>
             </View>

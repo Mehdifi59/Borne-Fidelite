@@ -1,5 +1,4 @@
-import {Link, Stack} from "expo-router";
-import { Text, View, SafeAreaView, TouchableOpacity } from 'react-native';
+import { View, SafeAreaView } from 'react-native';
 import {COLORS} from '../constants'
 import { HomeScreen } from "../components";
 const Home = () => {
@@ -8,9 +7,6 @@ const Home = () => {
     <View style={{flex:1}}>
         <HomeScreen />
     </View>
-
-
-
   </SafeAreaView>
   )
 }
