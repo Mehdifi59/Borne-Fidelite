@@ -18,7 +18,6 @@ const HomeScreen = () => {
                 style={styles.imgSize}
             />
             </View>
-
             <View style={styles.btnContainer}>
                 <TouchableOpacity style={styles.btn} onPress={handleClick}>
                     <Text style={styles.btnText}>Vazy</Text>
