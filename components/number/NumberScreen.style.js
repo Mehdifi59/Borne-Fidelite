@@ -5,11 +5,12 @@ const styles = StyleSheet.create({
     container : {
         height: "100%",
         width: "100%",
-        alignItems: "center"
+        alignItems: "center",
+
     },
     imgContainer : {
-        width : "50%",
-        height: "30%"
+        width : "55%",
+        height: "35%"
     },
     phoneSize: {
         width: "100%",
@@ -17,14 +18,14 @@ const styles = StyleSheet.create({
     },
 
     textContainer: {
+        marginTop: 30,
         alignItems: "center",
-
         width: "50%",
     },
 
     title : {
         fontSize: SIZES.xxxLarge,
-        fontFamily: FONTS.medium,
+        fontFamily: FONTS.Bold,
         color: COLORS.white,
         letterSpacing: -1,
         textAlign: "center",

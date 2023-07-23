@@ -1,7 +1,7 @@
 import { Text, View, Image } from "react-native";
 import styles from "./NumberScreen.style"
 import { images } from "../../constants";
-import Input from "../commons/input/Input";
+import NumberInput from "../commons/phoneInput/PhoneInput";
 
 const NumberScreen = () => {
     return(
@@ -17,8 +17,8 @@ const NumberScreen = () => {
                 <Text style={styles.title}>Entrez votre numéro</Text>
                 <Text style={styles.text}>veuillez entrer votre pays et votre numéro de téléphone</Text>
             </View>
-            <View style={{width : "50%"}}>
-                <Input />
+            <View style={{marginTop: 100}}>
+                <NumberInput />
             </View>
         </View>
     )
