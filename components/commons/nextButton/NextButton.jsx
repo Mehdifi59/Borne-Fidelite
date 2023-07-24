@@ -2,7 +2,6 @@ import { Text, TouchableOpacity,Image } from "react-native";
 import { icons } from "../../../constants";
 
 const NextButton = ({number, valid}) => {
-    console.log(number)
     return (
         <TouchableOpacity
         onPress={() => {
