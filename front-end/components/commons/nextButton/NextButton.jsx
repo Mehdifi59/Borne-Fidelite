@@ -7,6 +7,7 @@ const NextButton = ({number, valid}) => {
         onPress={() => {
           console.log(valid);
           console.log(number)
+          console.log(data)
         }}
         style={{backgroundColor:"#E66298", height:100, marginTop:50, width : 100, borderRadius: 100, justifyContent:"center",alignItems:"center"}}
       >

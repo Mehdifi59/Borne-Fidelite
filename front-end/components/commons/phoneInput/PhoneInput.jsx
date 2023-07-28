@@ -2,17 +2,21 @@ import React, { useState, useRef } from "react";
 import {View, TouchableOpacity, Text } from "react-native";
 import PhoneInput from "react-native-phone-number-input";
 import NextButton from "../nextButton/NextButton";
+import { getAllRequest } from "../../../api/request";
 
 import styles from "./PhoneInput.style";
 
 
 const NumberInput = () => {
+  
     const [value, setValue] = useState("");
     const [formattedValue, setFormattedValue] = useState("");
     const [valid, setValid] = useState(false);
     const phoneInput = useRef(null);
+    getAllRequest()
     return(
         <View style={{width: "100%", justifyContent:"center", alignItems:"center"}}>
+          
         <PhoneInput
             containerStyle={{width:"80%"}}
             textInputStyle={{fontSize: 25}}
