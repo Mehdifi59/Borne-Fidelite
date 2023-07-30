@@ -27,7 +27,7 @@ const NumberInput = () => {
             containerStyle={{width:"80%"}}
             textInputStyle={{fontSize: 25}}
             codeTextStyle={{fontSize:25}}
-            placeholder="652..."
+            placeholder="Entrez votre numéro"
             ref={phoneInput}
             defaultValue={value}
             defaultCode="FR"

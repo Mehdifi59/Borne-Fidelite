@@ -6,7 +6,9 @@ import { hasPhoneNumber } from "../../../api/dataHandlerClient";
 const ValidNumber = ({number, valid}) => {
 
     const handleButtonPress = async () => {
+      console.log(valid)
       try {
+        
         let exist = await hasPhoneNumber(number)
         if (exist) {
           console.log("il existe")
