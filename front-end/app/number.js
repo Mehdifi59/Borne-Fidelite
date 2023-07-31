@@ -1,6 +1,6 @@
 import { View, Text, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { COLORS } from "../constants";
+import { COLORS } from "../constants/index";
 import NumberScreen from "../components/number/NumberScreen";
 import { Svg, Path } from "react-native-svg";
 import { Stack } from "expo-router";

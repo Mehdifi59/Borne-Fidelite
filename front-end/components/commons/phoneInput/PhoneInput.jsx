@@ -1,23 +1,33 @@
 import React, { useState, useRef } from "react";
 import {View, TouchableOpacity, Text } from "react-native";
 import PhoneInput from "react-native-phone-number-input";
-import NextButton from "../nextButton/NextButton";
+import ValidNumber from "../validNumber/ValidNumber";
+import { getAllRequest } from "../../../api/request";
 
 import styles from "./PhoneInput.style";
 
 
 const NumberInput = () => {
+  
     const [value, setValue] = useState("");
     const [formattedValue, setFormattedValue] = useState("");
     const [valid, setValid] = useState(false);
     const phoneInput = useRef(null);
+
+    const sendData = () => {
+      getAllRequest()
+
+    }
+
+
     return(
         <View style={{width: "100%", justifyContent:"center", alignItems:"center"}}>
+          
         <PhoneInput
             containerStyle={{width:"80%"}}
             textInputStyle={{fontSize: 25}}
             codeTextStyle={{fontSize:25}}
-            placeholder="652..."
+            placeholder="Entrez votre numéro"
             ref={phoneInput}
             defaultValue={value}
             defaultCode="FR"
@@ -33,7 +43,7 @@ const NumberInput = () => {
             autoFocus
           />  
         <View style={{marginTop: 100}}>
-          <NextButton
+          <ValidNumber
           valid={phoneInput.current?.isValidNumber(value)}
           number={formattedValue}
           />
