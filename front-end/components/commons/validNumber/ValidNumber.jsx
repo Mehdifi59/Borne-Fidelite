@@ -2,11 +2,15 @@ import { Text, TouchableOpacity,Image } from "react-native";
 import { icons } from "../../../constants";
 import { getAllRequest, postData } from "../../../api/request";
 import { hasPhoneNumber } from "../../../api/dataHandlerClient";
+import { useRouter} from "expo-router";
+
 
 const ValidNumber = ({number, valid}) => {
 
+    const router = useRouter()
     const handleButtonPress = async () => {
       console.log(valid)
+
       try {
         
         let exist = await hasPhoneNumber(number)
@@ -15,6 +19,8 @@ const ValidNumber = ({number, valid}) => {
         }
         else {
           console.log("il n'existe pas")
+          router.push(`/namePage/${number}` )
+          
         }
       }
       catch(error) {

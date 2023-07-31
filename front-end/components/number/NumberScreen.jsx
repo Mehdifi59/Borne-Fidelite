@@ -15,7 +15,7 @@ const NumberScreen = () => {
             </View>
             <View style={styles.textContainer}>
                 <Text style={styles.title}>Entrez votre numéro</Text>
-                <Text style={styles.text}>veuillez entrer votre pays et votre numéro de téléphone</Text>
+                <Text style={styles.text}>Veuillez entrer votre pays et votre numéro de téléphone</Text>
             </View>
             <View style={{marginTop: 100}}>
                 <NumberInput />
