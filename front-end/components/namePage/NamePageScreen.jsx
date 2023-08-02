@@ -1,9 +1,9 @@
-import { View, Image, TextInput, Text } from "react-native";
+import { View, Image, Text } from "react-native";
 import { images } from "../../constants";
+import InputText from "../commons/textInput/InputText";
 import styles from "./NamePageScreen.style";
 import React from 'react';
 const NamePageScreen = () => {
-    const [text, onChangeText] = React.useState('');
     return (
         
         <View style={styles.container}>
@@ -19,13 +19,11 @@ const NamePageScreen = () => {
                 <Text style={styles.text}>Veuillez entrer votre nom et prénom</Text>
             </View>
 
-            <View style={{width: "100%", alignItems:"center", marginTop: 100}}>
-            <TextInput
-                style={styles.input}
-                onChangeText={onChangeText}
-                value={text}
-                placeholder="Nom"
-            />
+            <View style={{width: "100%", alignItems:"center", marginTop: 40}}>
+
+            <InputText label={"Nom"} />
+            <InputText label={"Prénom"} />
+
             </View>
         </View>
     )
