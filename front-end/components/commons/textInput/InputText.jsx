@@ -1,26 +1,37 @@
 import { Kohana } from 'react-native-textinput-effects';
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 import { COLORS, FONTS } from '../../../constants';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styles from './TextInput.style';
 const InputText = ({label}) => {
     const [text, setText] = useState('');
-    const [isRed, setIsRed] = useState(false);
+    const [isCorrect, setIsCorrect] = useState(true);
+
+    const regexNomPrenom = /^[a-zA-ZÀ-ÿ '-]+$/;
 
     const onChangeTextHandler = (newText) => {
       setText(newText);
-      setIsRed(newText.includes('('));
+      setIsCorrect(regexNomPrenom.test(newText));
+
       console.log(newText);
     };
+
+    // Vérifier si le champ est vide au chargement initial
+    useEffect(() => {
+    setIsCorrect(regexNomPrenom.test(text) || text === '');
+    }, []);
+
+
 
     return (
       <View style={{height:80, marginTop:30}}>
         <Kohana
         style={[
           styles.inputStyle,
-          isRed ? styles.alert : {borderColor : '#fff'},
+          isCorrect ? {borderColor : '#fff'} : styles.alert ,
         ]}
+        
         label={label}
         onChangeText={onChangeTextHandler}
         defaultValue={text}
@@ -34,6 +45,11 @@ const InputText = ({label}) => {
         iconContainerStyle={{ padding: 20 }}
         useNativeDriver
       />
+
+      {/* Afficher le message si isCorrect est false */}
+      {!isCorrect && (
+        <Text style={{ color: 'red' }}>Veuillez entrer un {label} correct.</Text>
+      )}
 
     </View>
     )
