@@ -3,8 +3,11 @@ import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 import { View, Text } from 'react-native';
 import { COLORS, FONTS } from '../../../constants';
 import { useState, useEffect } from 'react';
-import styles from './TextInput.style';
-const InputText = ({label}) => {
+import styles from './InputText.style';
+
+import { useRouter, useLocalSearchParams  } from "expo-router";
+
+const InputText = ({label, onIsValidChange, onTextChange}) => {
     const [text, setText] = useState('');
     const [isCorrect, setIsCorrect] = useState(true);
 
@@ -12,9 +15,23 @@ const InputText = ({label}) => {
 
     const onChangeTextHandler = (newText) => {
       setText(newText);
-      setIsCorrect(regexNomPrenom.test(newText));
-
-      console.log(newText);
+      if (newText.trim() == ""){
+        setIsCorrect(false)
+        onIsValidChange(false)
+      }
+      else{
+        if(regexNomPrenom.test(newText)){
+          setIsCorrect(true);
+          // Appeler la fonction de mise à jour de l'état 'isValid' du composant parent
+          onTextChange(newText)
+          onIsValidChange(true);
+        }else{
+          setIsCorrect(false);
+          onIsValidChange(false);
+        }
+        
+        
+      }
     };
 
     // Vérifier si le champ est vide au chargement initial
@@ -48,7 +65,7 @@ const InputText = ({label}) => {
 
       {/* Afficher le message si isCorrect est false */}
       {!isCorrect && (
-        <Text style={{ color: 'red' }}>Veuillez entrer un {label} correct.</Text>
+        <Text style={{ color: 'red', }}>Veuillez entrer un {label} correct.</Text>
       )}
 
     </View>

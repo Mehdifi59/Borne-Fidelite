@@ -1,5 +1,7 @@
 import axios from 'axios'
 
+let today = new Date();
+
 const BASEURL = 'http://192.168.0.33:8000/api/clients';
 
 // requête GET de l'api
@@ -17,19 +19,21 @@ const getAllRequest = async () => {
         return null
     }
 }
-// requête pour post 
 /**
- * 
+ * requête post
+ * envoie les données dans la base de données d'un nouveau clients (20 points à l'inscription)
  * @param {string} numero 
+ * @param {string} nom 
+ * @param {string} prenom 
  */
-const postData = async (numero) => {
+const postData = async (numero, nom, prenom) => {
     try{
         const response = await axios.post(BASEURL, {
             telephone : numero,
-            nom : "testApi",
-            prenom : "testApi",
+            nom : nom,
+            prenom : prenom,
             points : 20,
-            createdAt : "2023-07-29T18:37:42.080Z"
+            createdAt : today
         }, {
             headers: {
                 "Accept" : "application/json"

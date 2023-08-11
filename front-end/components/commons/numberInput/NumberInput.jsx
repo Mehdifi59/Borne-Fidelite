@@ -4,7 +4,7 @@ import PhoneInput from "react-native-phone-number-input";
 import ValidNumber from "../validNumber/ValidNumber";
 import { getAllRequest } from "../../../api/request";
 
-import styles from "./PhoneInput.style";
+import styles from "./NumberInput.style";
 
 
 const NumberInput = () => {

@@ -1,7 +1,7 @@
 import { Text, View, Image } from "react-native";
 import styles from "./NumberScreen.style"
 import { images } from "../../constants";
-import NumberInput from "../commons/phoneInput/PhoneInput";
+import NumberInput from "../commons/numberInput/NumberInput";
 
 const NumberScreen = () => {
     return(

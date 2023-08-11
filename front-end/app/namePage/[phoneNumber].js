@@ -9,7 +9,6 @@ import NamePageScreen from "../../components/namePage/NamePageScreen";
 const namePage = () => {
     const router = useRouter()
     const {phoneNumber} = useLocalSearchParams();
-    console.log(phoneNumber)
 
     const handleClick = () => {
         router.back()
@@ -25,7 +24,7 @@ const namePage = () => {
              <View style={{height: "5%", justifyContent:"center"}}>
                 <GoBack back={() => router.back() }/>
             </View>
-            <NamePageScreen />
+            <NamePageScreen phoneNumber={phoneNumber} />
         </SafeAreaView>
     )   
 }

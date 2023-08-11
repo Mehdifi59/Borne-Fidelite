@@ -1,18 +1,25 @@
 import { Text, TouchableOpacity,Image } from "react-native";
+import { useState, useEffect } from "react";
 import { icons } from "../../../constants";
 import { getAllRequest, postData } from "../../../api/request";
 import { hasPhoneNumber } from "../../../api/dataHandlerClient";
 import { useRouter} from "expo-router";
-
+import styles from "./ValidNumber.style";
 
 const ValidNumber = ({number, valid}) => {
-
+    console.log(valid)
     const router = useRouter()
-    const handleButtonPress = async () => {
-      console.log(valid)
+    const [disabled,setDisabled]=useState(true)
 
+    // Utilisation de useEffect pour mettre à jour l'état lorsque 'valid' change
+    useEffect(() => {
+      setDisabled(!valid); // Met à jour l'état 'disabled' en fonction de la valeur de 'valid'
+    }, [valid]); // Le tableau des dépendances indique à React d'exécuter le useEffect lorsque 'valid' change
+
+
+    const handleButtonPress = async () => {
+    
       try {
-        
         let exist = await hasPhoneNumber(number)
         if (exist) {
           console.log("il existe")
@@ -27,32 +34,16 @@ const ValidNumber = ({number, valid}) => {
         console.error(error)
       }
 
-      // try{
-      //   let exist = false;
-      //   const data = await getAllRequest();
-      //   data.forEach(client => {
-      //     if (client.telephone == number) {
-      //       exist = true
-      //     }
-      //   });
-      //   if (!exist){
-      //     postData(number)
-      //     console.log("le numéro à été ajouté")
-      //   }
-      //   else{
-      //     console.log("il existe déjà :/")
-      //   }
-      //   console.log(valid);
-      //   console.log(number)
-      // }catch(error){
-      //   console.error(error)
-      // }
     }
 
     return (
         <TouchableOpacity
         onPress={handleButtonPress}
-        style={{backgroundColor:"#E66298", height:100, marginTop:50, width : 100, borderRadius: 100, justifyContent:"center",alignItems:"center"}}
+        style={[
+          styles.nextButton,
+          disabled ? {backgroundColor : '#808080'} : styles.nextButton ,
+        ]}
+        disabled={disabled} 
       >
         <Image 
           style={{width: '40%', height:"40%"}} 
