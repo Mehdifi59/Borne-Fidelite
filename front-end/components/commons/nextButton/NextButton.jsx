@@ -2,10 +2,11 @@ import { TouchableOpacity, Image } from "react-native"
 import { icons } from "../../../constants"
 import { postData } from "../../../api/request"
 import { useEffect, useState } from "react"
+import { useRouter } from "expo-router"
 import styles from "./NextButton.style"
 
 const NextButton = ({isValidNom, isValidPrenom, nom, prenom, numero}) => {
-
+    const router = useRouter()
     const [disabled,setDisabled]=useState(true)
 
     // Utilisation de useEffect pour mettre à jour l'état lorsque 'valid' change
@@ -17,6 +18,7 @@ const NextButton = ({isValidNom, isValidPrenom, nom, prenom, numero}) => {
     const onHandlePress = () => {
         if(isValidNom && isValidPrenom){
             postData(numero,nom,prenom)
+            router.push(`/catalogue/${numero}`)
         } 
     }
     

@@ -19,6 +19,8 @@ const getAllRequest = async () => {
         return null
     }
 }
+
+
 /**
  * requête post
  * envoie les données dans la base de données d'un nouveau clients (20 points à l'inscription)
@@ -49,5 +51,4 @@ const postData = async (numero, nom, prenom) => {
 export {
     getAllRequest,
     postData,
-
 }

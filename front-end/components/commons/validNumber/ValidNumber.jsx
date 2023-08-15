@@ -22,7 +22,7 @@ const ValidNumber = ({number, valid}) => {
       try {
         let exist = await hasPhoneNumber(number)
         if (exist) {
-          console.log("il existe")
+          router.push(`/catalogue/${number}` )
         }
         else {
           console.log("il n'existe pas")
