@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+    <div class="w-4/5 m-auto text-center bg-dark container-fluid w-100 p-3" style='height: 100vh'>
+
+        {% if error %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
+                <h1 class="text-light text-center">
+                Inscription
+                </h1>
+        <div class="mx-auto w-50 position-absolute top-50 start-50 translate-middle">
+            {{ form_start(registrationForm) }}
+                {{ form_row(registrationForm.email) }}
+                {{ form_row(registrationForm.plainPassword) }}
+            
+            <button 
+                type="submit" 
+                class="btn btn-primary fs-4">
+                S'inscrire
+            </button>
+            
+            {{ form_end(registrationForm) }}
+
+        </div>
+    </div>
+{% endblock %}
