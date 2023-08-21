@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\User;
 use App\Entity\Clients;
+use App\Entity\Catalogue;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -30,5 +31,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::linkToCrud('Clients', 'fas fa-people-arrows', Clients::class);
         yield MenuItem::linkToCrud('Administrateurs', 'fas fa-user', User::class);
+        yield MenuItem::linkToCrud('Catalogue', 'fas fa-cookie-bite', Catalogue::class);
     }
 }
