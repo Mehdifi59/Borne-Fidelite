@@ -12,9 +12,11 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 use EasyCorp\Bundle\EasyAdminBundle\Form\Type\FileUploadType;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
+#[IsGranted('ROLE_ADMIN')]
 class CatalogueCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
@@ -41,11 +43,10 @@ class CatalogueCrudController extends AbstractCrudController
             SlugField::new('slug')->setTargetFieldName('title'),
             BooleanField::new('online'),
             IntegerField::new('points'),
-            TextField::new('imageFile')->setFormType(VichImageType::class),
+            TextField::new('imageFile')->setFormType(VichImageType::class)->hideOnIndex()->hideOnForm(),
             ImageField::new('image')
-                ->setBasePath('public/images/products')
-                ->setUploadDir('public/images/products')
-                ->onlyOnIndex(),
+                ->setBasePath('images/products')
+                ->setUploadDir('public/images/products'),
             DateTimeField::new('created_at'),
 
         ];

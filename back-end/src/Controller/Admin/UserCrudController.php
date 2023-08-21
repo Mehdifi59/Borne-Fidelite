@@ -8,8 +8,11 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\Field;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ArrayField;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
+
+#[IsGranted('ROLE_ADMIN')]
 class UserCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string

@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import {View, TouchableOpacity, Text } from "react-native";
 import PhoneInput from "react-native-phone-number-input";
 import ValidNumber from "../validNumber/ValidNumber";
-import { getAllRequest } from "../../../api/request";
+import { getAllRequest } from "../../../api/requestClient";
 
 import styles from "./NumberInput.style";
 

@@ -30,7 +30,7 @@ class Catalogue
     #[ORM\Column]
     private ?int $points = null;
 
-    #[ORM\Column(length: 255, type: 'string')]
+    #[ORM\Column(length: 255, type: 'string', nullable: true)]
     private ?string $image = null;
 
     #[Vich\UploadableField(mapping: 'products', fileNameProperty: 'image')]
@@ -98,7 +98,7 @@ class Catalogue
         return $this->image;
     }
 
-    public function setImage(string $image): static
+    public function setImage(?string $image): static
     {
         $this->image = $image;
 

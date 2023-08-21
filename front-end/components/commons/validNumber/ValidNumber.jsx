@@ -1,7 +1,7 @@
 import { Text, TouchableOpacity,Image } from "react-native";
 import { useState, useEffect } from "react";
 import { icons } from "../../../constants";
-import { getAllRequest, postData } from "../../../api/request";
+import { getAllRequest, postData } from "../../../api/requestClient";
 import { hasPhoneNumber } from "../../../api/dataHandlerClient";
 import { useRouter} from "expo-router";
 import styles from "./ValidNumber.style";

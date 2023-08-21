@@ -1,6 +1,6 @@
 import { TouchableOpacity, Image } from "react-native"
 import { icons } from "../../../constants"
-import { postData } from "../../../api/request"
+import { postData } from "../../../api/requestClient"
 import { useEffect, useState } from "react"
 import { useRouter } from "expo-router"
 import styles from "./NextButton.style"

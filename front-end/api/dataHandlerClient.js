@@ -1,4 +1,4 @@
-import { getAllRequest } from "./request";
+import { getAllRequest } from "./requestClient";
 
 const hasPhoneNumber = async (phoneNumber) => {
     try{

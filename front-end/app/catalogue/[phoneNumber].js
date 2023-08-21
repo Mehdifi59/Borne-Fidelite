@@ -6,6 +6,7 @@ import GoBack from "../../components/commons/goBack/GoBack";
 import { getDataFromNumber } from "../../api/dataHandlerClient";
 import { useEffect, useState } from "react";
 import Header from "../../components/catalogue/header/Header";
+import CatalogueScreen from "../../components/catalogue/CatalogueScreen";
 
 const catalogue =  () => {
     const {phoneNumber} = useLocalSearchParams();
@@ -50,6 +51,11 @@ const catalogue =  () => {
                 <View style={{ height: "20%", justifyContent: "center", alignItems: "center" }}>
                     <Header
                         prenom={response?.prenom || ""} // Utilisation de la condition optionnelle pour prévenir les erreurs si response est null
+                    />
+                </View>
+                <View style={{ height: "80%", justifyContent: "center", alignItems: "center" }}>
+                    <CatalogueScreen
+                        points={response?.points || ""} // Utilisation de la condition optionnelle pour prévenir les erreurs si response est null
                     />
                 </View>
                 {/* Autre contenu de votre page */}
