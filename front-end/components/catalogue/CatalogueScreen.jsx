@@ -36,11 +36,11 @@ const CatalogueScreen = ({points}) => {
                 </View>
             ) : 
             ( // Sinon, affiche le contenu de la page
-            <View style={{height: "90%"}}>
+            <View style={{height: "100%"}}>
             <View style={{height: "20%", justifyContent: 'center', alignItems:'center'}}>
                 <Text style={styles.text}>Profite de tes {points} points !</Text>
             </View>
-            <View style={{height: "50%",}}>
+            <View style={{height: "60%",}}>
                 <ScrollView
                     horizontal={true}
                 >
@@ -54,11 +54,8 @@ const CatalogueScreen = ({points}) => {
                                 imageUrl={item.image}                       
                             />
                             )
-
                         }
                     })}
-                    
-
                 </ScrollView>
             </View>
             </View>

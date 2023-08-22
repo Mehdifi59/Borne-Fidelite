@@ -1,14 +1,15 @@
-import { Text, View, ActivityIndicator } from "react-native"
-import { SafeAreaView } from "react-native-safe-area-context";
+import { View, ActivityIndicator } from "react-native"
 import { useLocalSearchParams, Stack } from "expo-router";
 import { COLORS } from "../../constants";
-import GoBack from "../../components/commons/goBack/GoBack";
 import { getDataFromNumber } from "../../api/dataHandlerClient";
 import { useEffect, useState } from "react";
 import Header from "../../components/catalogue/header/Header";
 import CatalogueScreen from "../../components/catalogue/CatalogueScreen";
+import { useRouter } from "expo-router";
 
 const catalogue =  () => {
+    const router = useRouter()
+
     const {phoneNumber} = useLocalSearchParams();
     const [response, setResponse] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
@@ -50,7 +51,8 @@ const catalogue =  () => {
             <View style={{ flex: 1 }}>
                 <View style={{ height: "20%", justifyContent: "center", alignItems: "center" }}>
                     <Header
-                        prenom={response?.prenom || ""} // Utilisation de la condition optionnelle pour prévenir les erreurs si response est null
+                        prenom={response?.prenom || ""}
+                        route={router} // Utilisation de la condition optionnelle pour prévenir les erreurs si response est null
                     />
                 </View>
                 <View style={{ height: "80%", justifyContent: "center", alignItems: "center" }}>

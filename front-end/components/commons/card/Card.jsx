@@ -1,5 +1,6 @@
 import { Text, View, TouchableOpacity, Image } from "react-native";
-
+import { COLORS, FONTS, SIZES } from "../../../constants";
+import styles from "./Card.style";
 
 const Card = ({title, imageUrl, points}) => {
 
@@ -7,15 +8,15 @@ const Card = ({title, imageUrl, points}) => {
      const decodedImageUrl = decodeURIComponent(imageUrl);
 
     return(
-        <View style={{backgroundColor: "#fff", flex : 1, width: 350, borderRadius:10, margin: 20}}>
-            
-            <Text>{title}</Text>
-            <Text>{points}</Text>
-            <Text>{decodedImageUrl}</Text>
+        <View style={styles.container}>
             <Image 
             source={{uri: `http://192.168.0.33:8000/images/products/${decodedImageUrl}`}}
-            style={{ width: 100, height: 100 }} />
-
+            resizeMode="cover"
+            style={styles.img} />
+            
+            <TouchableOpacity style={styles.btn}><Text style={styles.btnText}>Obtenir</Text></TouchableOpacity>
+            <Text style={styles.title}>{title}</Text>
+            <Text style={styles.points}>{points} points</Text>
         </View>
     )
 }
