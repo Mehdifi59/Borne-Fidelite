@@ -11,7 +11,7 @@ La borne à été pensé pour les système android mais pourrait fonctionner sur
 Elle dispose d'une authentification par numéro de téléphone, si la personne est reconnu dans la base de données, alors elle seras authentifier et des points lui seront ajoutés pour sa venu (possible de configurer le nombre de points ajouter à chaque venu du client sur le panel admin).
 Un inconvénient/vulnérabilité ici, c'est qu'une personne mal intentionné pourrait usurper un numéro de téléphone qui n'est pas le sien, car il n'y a pas de vérification double facteur (des bibliothèques le font et c'est facilement configurable).
 
-La borne possède une api configurer avec https://api-platform.com/docs/distribution/[api-plateforme]
+La borne possède une api configurer avec https://api-platform.com/docs/distribution/[api-plateform]
 
 Elle possède également un panel admin, où seul un utilisateur dans la base de données possédant le role [ROLE_ADMIN] peut y accéder. Et de là on peut configurer les différents produits que l'ont peut avoir avec un nombre suffisant de points de fidélité, gérer la base de données des clients etc..
 
@@ -78,7 +78,7 @@ composer install
 php bin/console doctrine:database:create
 ----
 
--- Lancer le serveur :
+- Lancer le serveur :
 [source,shell]
 ----
 symfony server:start
@@ -87,16 +87,16 @@ symfony server:start
 Une fois le serveur lancé l'api est fonctionnelle et la front-end est capable de les récupérer.
 Vous pouvez ensuite entrer l'url *localhost* dans votre navigateur afin d'accéder au panel admin.
 
-[IMPORTANT]
+
 .Ajouter l'api au front-end
 
-Pour que le front-end reçoit les méthodes de l'api il faut configurer l'url de la base.
+⚠️ Pour que le front-end reçoit les méthodes de l'api il faut configurer l'url de la base.
 
 - Aller dans le dossier */chemin/vers/Borne-fidelite/front-end/api/request.js* et changer la constante BASEURL par la votre.
 
 ---
 
-Une fois cela fait tout devrais fonctionner parfaitement, n'hésitez pas à me contacter si vous ne parvenez pas à certaines choses. 
+Une fois cela fait tout devrais fonctionner parfaitement, n'hésitez pas à me contacter si vous ne parvenez pas à faire certaines choses. 
 
 
 
