@@ -55,7 +55,7 @@ npm install
 npm start
 ----
 
-_Appuyer sur 'a' ensuite pour démarrer avec un émulateur android
+_Appuyer sur 'a' ensuite pour démarrer avec un émulateur android_
 
 ---
 
