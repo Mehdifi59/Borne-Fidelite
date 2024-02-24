@@ -13,7 +13,7 @@ const HomeScreen = () => {
         <View style={styles.container}>
             <View style={{height:"50%"}}>
             <Image 
-                source={images.vazygood}
+                source={images.imageBorne}
                 resizeMode="contain"
                 style={styles.imgSize}
             />

@@ -1,0 +1,103 @@
+= Borne de fidélité (n'est plus en développement)
+
+Une borne de fidélité simple, pourrait servir de point de départ pour créer différentes bornes. Principalement codé en javascript avec le framework react-native pour le front-end. Et Php avec le framework Symfony pour la partie back-end et création de l'api avec API Plateforme, j'ai également pris l'initiative de séparer complétement le front-end du back-end (pour qu'il puisse être héberger dans un serveur).
+
+---
+
+== Fonctionnement
+
+La borne à été pensé pour les système android mais pourrait fonctionner sur ios également avec quelques configuration supplémentaires que je n'évoquerais pas ici. Elle propose un style simple afin de vous laisser l'opportunité de prendre en main le design facilement (avec un peu de connaissance en React-Native et CSS)
+
+Elle dispose d'une authentification par numéro de téléphone, si la personne est reconnu dans la base de données, alors elle seras authentifier et des points lui seront ajoutés pour sa venu (possible de configurer le nombre de points ajouter à chaque venu du client sur le panel admin).
+Un inconvénient/vulnérabilité ici, c'est qu'une personne mal intentionné pourrait usurper un numéro de téléphone qui n'est pas le sien, car il n'y a pas de vérification double facteur (des bibliothèques le font et c'est facilement configurable).
+
+La borne possède une api configurer avec https://api-platform.com/docs/distribution/[api-plateforme]
+
+Elle possède également un panel admin, où seul un utilisateur dans la base de données possédant le role [ROLE_ADMIN] peut y accéder. Et de là on peut configurer les différents produits que l'ont peut avoir avec un nombre suffisant de points de fidélité, gérer la base de données des clients etc..
+
+---
+
+== Prérequis
+
+Avant de cloner le répértoire assurez vous de posséder :
+
+ * Android studio (je conseille d'utiliser la tablette *Pixel Tablet API 33*)
+ * Un ide (Vscode est conseillé)
+ * PHP (avec Symfony, composer. Vous trouverez des tutos facilement sur internet pour les installer)
+ * Node.js
+ * npm/yarn
+ * Mysql
+
+---
+
+== Installation
+
+- Cloner le dépôt : 
+[source,shell]
+----
+git clone https://github.com/Mehdifi59/Borne-Fidelite
+----
+
+---
+
+=== Configuration du front-end
+
+- Déplacer vous sur le dossier front-end et installer les dépendances : 
+[source, shell]
+----
+cd /chemin/vers/Borne-fidelite/front-end
+npm install
+----
+
+- une fois ceci fait vous êtes censé pouvoir le lancer.
+[source,shell]
+----
+npm start
+----
+
+_Appuyer sur 'a' ensuite pour démarrer avec un émulateur android
+
+---
+
+=== Configuration du back-end
+
+Vous êtes censé avoir les pré-requis (PHP, Symfony).
+
+- Déplacer vouos sur le dossier back-end et installer les dépendances :
+[source,shell]
+----
+cd chemin/vers/Borne-fidelite/back-end
+composer install
+----
+
+- Aller dans le fichier .env et remplacer la ligne qui commence par *DATABASE_URL* par le votre
+
+- Créer la base de données :
+[source,shell]
+----
+php bin/console doctrine:database:create
+----
+
+-- Lancer le serveur :
+[source,shell]
+----
+symfony server:start
+----
+
+Une fois le serveur lancé l'api est fonctionnelle et la front-end est capable de les récupérer.
+Vous pouvez ensuite entrer l'url *localhost* dans votre navigateur afin d'accéder au panel admin.
+
+[IMPORTANT]
+.Ajouter l'api au front-end
+
+Pour que le front-end reçoit les méthodes de l'api il faut configurer l'url de la base.
+
+- Aller dans le dossier */chemin/vers/Borne-fidelite/front-end/api/request.js* et changer la constante BASEURL par la votre.
+
+---
+
+Une fois cela fait tout devrais fonctionner parfaitement, n'hésitez pas à me contacter si vous ne parvenez pas à certaines choses. 
+
+
+
+
