@@ -1,19 +1,19 @@
 = Borne de fidélité (n'est plus en développement)
 
-Une borne de fidélité simple, pourrait servir de point de départ pour créer différentes bornes. Principalement codé en javascript avec le framework react-native pour le front-end. Et Php avec le framework Symfony pour la partie back-end et création de l'api avec API Plateform, j'ai également pris l'initiative de séparer complétement le front-end du back-end (pour qu'il puisse être héberger dans un serveur).
+Une borne de fidélité simple, pourrait servir de point de départ pour créer différentes bornes. Principalement codé en javascript avec le framework react-native pour le front-end. Et Php avec le framework Symfony pour la partie back-end et création de l'api avec API Plateform, j'ai également pris l'initiative de séparer complètement le front-end du back-end (pour qu'il puisse être héberger dans un serveur).
 
 ---
 
 == Fonctionnement
 
-La borne à été pensé pour les système android mais pourrait fonctionner sur ios également avec quelques configuration supplémentaires que je n'évoquerais pas ici. Elle propose un style simple afin de vous laisser l'opportunité de prendre en main le design facilement (avec un peu de connaissance en React-Native et CSS)
+La borne à été pensée pour les système android mais pourrait fonctionner sur ios également avec quelques configurations supplémentaires que je n'évoquerais pas ici. Elle propose un style simple afin de vous laisser l'opportunité de prendre en main le design facilement (avec un peu de connaissance en React-Native et CSS)
 
-Elle dispose d'une authentification par numéro de téléphone, si la personne est reconnu dans la base de données, alors elle seras authentifier et des points lui seront ajoutés pour sa venu (possible de configurer le nombre de points à ajouter pour chaque venu).
-Un inconvénient/vulnérabilité ici, c'est qu'une personne mal intentionné pourrait usurper un numéro de téléphone qui n'est pas le sien, car il n'y a pas de vérification double facteur (des bibliothèques le font et c'est facilement configurable).
+Elle dispose d'une authentification par numéro de téléphone, si la personne est reconnue dans la base de données, alors elle sera authentifiée et des points lui seront ajoutés pour sa venue (possible de configurer le nombre de points à ajouter pour chaque venue).
+Un inconvénient/vulnérabilité ici, c'est qu'une personne mal intentionnée pourrait usurper un numéro de téléphone qui n'est pas le sien, car il n'y a pas de vérification double facteur (des bibliothèques le font et c'est facilement configurable).
 
 La borne possède une api configurer avec https://api-platform.com/docs/distribution/[api-plateform]
 
-Elle possède également un panel admin, où seul un utilisateur dans la base de données possédant le role [ROLE_ADMIN] peut y accéder. Et de là on peut configurer les différents produits que l'ont peut avoir avec un nombre suffisant de points de fidélité, gérer la base de données des clients etc..
+Elle possède également un panel admin, où seul un utilisateur dans la base de données possédant le role [ROLE_ADMIN] peut y accéder. Et de là on peut configurer les différents produits que l'on peut avoir avec un nombre suffisant de points de fidélité, gérer la base de données des clients etc..
 
 ---
 
@@ -96,7 +96,7 @@ Vous pouvez ensuite entrer l'url *localhost* dans votre navigateur afin d'accéd
 
 ---
 
-Une fois cela fait tout devrais fonctionner parfaitement, n'hésitez pas à me contacter si vous ne parvenez pas à faire certaines choses. 
+Si toutes les étapes ont été correctement suivies tout devrais fonctionner parfaitement, contactez-moi en cas de problème. 
 
 
 
