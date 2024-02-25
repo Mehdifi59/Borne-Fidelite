@@ -1,6 +1,6 @@
 = Borne de fidélité (n'est plus en développement)
 
-Une borne de fidélité simple, pourrait servir de point de départ pour créer différentes bornes. Principalement codé en javascript avec le framework react-native pour le front-end. Et Php avec le framework Symfony pour la partie back-end et création de l'api avec API Plateforme, j'ai également pris l'initiative de séparer complétement le front-end du back-end (pour qu'il puisse être héberger dans un serveur).
+Une borne de fidélité simple, pourrait servir de point de départ pour créer différentes bornes. Principalement codé en javascript avec le framework react-native pour le front-end. Et Php avec le framework Symfony pour la partie back-end et création de l'api avec API Plateform, j'ai également pris l'initiative de séparer complétement le front-end du back-end (pour qu'il puisse être héberger dans un serveur).
 
 ---
 
