@@ -8,7 +8,7 @@ Une borne de fidélité simple, pourrait servir de point de départ pour créer 
 
 La borne à été pensé pour les système android mais pourrait fonctionner sur ios également avec quelques configuration supplémentaires que je n'évoquerais pas ici. Elle propose un style simple afin de vous laisser l'opportunité de prendre en main le design facilement (avec un peu de connaissance en React-Native et CSS)
 
-Elle dispose d'une authentification par numéro de téléphone, si la personne est reconnu dans la base de données, alors elle seras authentifier et des points lui seront ajoutés pour sa venu (possible de configurer le nombre de points ajouter à chaque venu du client sur le panel admin).
+Elle dispose d'une authentification par numéro de téléphone, si la personne est reconnu dans la base de données, alors elle seras authentifier et des points lui seront ajoutés pour sa venu (possible de configurer le nombre de points à ajouter pour chaque venu).
 Un inconvénient/vulnérabilité ici, c'est qu'une personne mal intentionné pourrait usurper un numéro de téléphone qui n'est pas le sien, car il n'y a pas de vérification double facteur (des bibliothèques le font et c'est facilement configurable).
 
 La borne possède une api configurer avec https://api-platform.com/docs/distribution/[api-plateform]
